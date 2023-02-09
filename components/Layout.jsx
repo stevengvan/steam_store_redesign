@@ -8,13 +8,11 @@ const Layout = ({ children }) => {
       <Head>
         <title>Welcome to Steam</title>
       </Head>
-      <header>
+      <div className="layout">
         <Navbar />
-      </header>
 
-      <main className="main-container">{children}</main>
-
-      <footer>Footer</footer>
+        <main className="main-container">{children}</main>
+      </div>
     </div>
   );
 };

@@ -1,13 +1,15 @@
 .container {
   display: flex;
   flex-direction: column;
+  padding: 1.5rem;
 }
 
 .hero-banner-container {
-  width: 80%;
+  width: 45%;
   align-self: center;
   border-radius: 0.5em;
   position: relative;
+  margin-bottom: 1.75rem;
 }
 
 .hero-banner-image {
@@ -36,13 +38,24 @@
   top: 0;
 }
 
+.banner-texts > *:hover {
+  cursor: pointer;
+}
 .banner-texts > *:first-child {
   font-size: 1.25em;
   margin-bottom: 10px;
 }
+.banner-texts > *:first-child:hover {
+  color: #4f89fc;
+  transition-duration: 250ms;
+}
 .banner-texts > *:last-child {
   font-size: 1em;
   color: rgb(134, 134, 134);
+}
+.banner-texts > *:last-child:hover {
+  color: rgb(78, 78, 78);
+  transition-duration: 250ms;
 }
 
 .banner-genres {
@@ -66,6 +79,11 @@
   transition: transform 0.4s;
   -webkit-transition: -webkit-transform 0.4s;
 }
+.purchase-btn:hover {
+  cursor: pointer;
+  -webkit-transform: scale(1.1) rotate(0.01deg);
+  transform: scale(1.1) rotate(0.01deg);
+}
 .purchase-btn * {
   font-size: 1em;
 }
@@ -73,49 +91,23 @@
   margin-right: 10px;
 }
 
+.games-scroll {
+  background-color: blue;
+  height: 15vh;
+  display: grid;
+}
+
 @media screen and (min-width: 55rem) {
-  .hero-banner-container {
-    background-color: rgb(44, 44, 44);
-    display: flex;
+  .container {
+    padding: 2rem 7.5rem;
   }
 
-  .hero-banner-image {
-    width: 75%;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-    transition: transform 0.4s;
-    -webkit-transition: -webkit-transform 0.4s;
-  }
-  .hero-banner-image:hover {
-    cursor: pointer;
-    -webkit-transform: scale(1.05) rotate(0.01deg);
-    transform: scale(1.05) rotate(0.01deg);
-  }
-
-  .hero-banner-info-container {
-    position: static;
-    background-image: none;
-    align-items: center;
-    text-align: left;
-  }
-
-  .banner-texts > *:hover {
-    cursor: pointer;
-  }
   .banner-texts > *:first-child {
     font-size: 1.75vw;
-  }
-  .banner-texts > *:first-child:hover {
-    color: #4f89fc;
-    transition-duration: 250ms;
   }
   .banner-texts > *:last-child {
     font-size: 1.3vw;
     color: rgb(134, 134, 134);
-  }
-  .banner-texts > *:last-child:hover {
-    color: rgb(78, 78, 78);
-    transition-duration: 250ms;
   }
 
   .banner-genres {
@@ -125,11 +117,6 @@
   .purchase-btn {
     border-radius: 1em;
     padding: 15px;
-  }
-  .purchase-btn:hover {
-    cursor: pointer;
-    -webkit-transform: scale(1.1) rotate(0.01deg);
-    transform: scale(1.1) rotate(0.01deg);
   }
   .purchase-btn *:first-child {
     margin-right: 10px;

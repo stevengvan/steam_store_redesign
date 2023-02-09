@@ -17,12 +17,6 @@ const HeroBanner = () => {
           <h4>Sucker Punch Productions</h4>
         </div>
 
-        <div className={styles["banner-genres"]}>
-          <GenreTag genre="Roleplaying" />
-          <GenreTag genre="Action" />
-          <GenreTag genre="Stealth" />
-        </div>
-
         <button className={styles["purchase-btn"]}>
           <span>$69.99</span>
           <span>Purchase</span>
