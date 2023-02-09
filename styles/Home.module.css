@@ -1,11 +1,10 @@
 .container {
   display: flex;
   flex-direction: column;
-  padding: 1.5rem;
+  padding: 3rem 1.5rem 1.5rem 1.5rem;
 }
 
 .hero-banner-container {
-  width: 45%;
   align-self: center;
   border-radius: 0.5em;
   position: relative;
@@ -17,6 +16,12 @@
   height: auto;
   border-radius: 0.5em;
   width: 100%;
+  cursor: pointer;
+  transition-duration: 250ms;
+  z-index: 2;
+}
+.hero-banner-image:hover {
+  transform: scale(1.075);
 }
 
 .hero-banner-info-container {
@@ -102,6 +107,29 @@
     padding: 2rem 7.5rem;
   }
 
+  .hero-banner-container {
+    border-radius: 0.5em;
+    display: flex;
+    width: 100%;
+  }
+
+  .hero-banner-image {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    width: 75%;
+  }
+
+  .hero-banner-info-container {
+    background-color: rgb(63, 63, 63);
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    background-image: none;
+    align-items: flex-start;
+    text-align: left;
+    width: 25%;
+    position: static;
+  }
+
   .banner-texts > *:first-child {
     font-size: 1.75vw;
   }
@@ -117,6 +145,10 @@
   .purchase-btn {
     border-radius: 1em;
     padding: 15px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
   }
   .purchase-btn *:first-child {
     margin-right: 10px;
