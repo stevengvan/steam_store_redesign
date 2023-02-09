@@ -1,21 +1,71 @@
 import React from "react";
+import { MdKeyboardArrowRight } from "react-icons/md";
 import HeroBanner from "@/components/HeroBanner";
 import styles from "@/styles/Home.module.css";
 
 export default function Home() {
   return (
     <>
-      <HeroBanner />
-      {/* <HeroBanner /> */}
+      <section>
+        <HeroBanner />
+      </section>
 
-      <h3>Special Offers</h3>
-      <div className={styles["games-scroll"]}></div>
+      <section>
+        <div className={styles["offers-header"]}>
+          <h3>Special Offers</h3>
+          <button>
+            See All
+            <MdKeyboardArrowRight />
+          </button>
+        </div>
+        <div className={styles["games-scroll"]}>
+          {Array.from({ length: 3 }).map((_, index) => (
+            <img
+              key={index}
+              className={styles["product-image"]}
+              src="images/DeadSpace.webp"
+            />
+          ))}
+        </div>
+      </section>
 
-      <h3>Most Popular</h3>
-      <div className={styles["games-scroll"]}></div>
+      <section>
+        <div className={styles["offers-header"]}>
+          <h3>Most Popular</h3>
+          <button>
+            See All
+            <MdKeyboardArrowRight />
+          </button>
+        </div>
+        <div className={styles["games-scroll"]}>
+          {Array.from({ length: 3 }).map((_, index) => (
+            <img
+              key={index}
+              className={styles["product-image"]}
+              src="images/DeadSpace.webp"
+            />
+          ))}
+        </div>
+      </section>
 
-      <h3>Wishlist</h3>
-      <div className={styles["games-scroll"]}></div>
+      <section>
+        <div className={styles["offers-header"]}>
+          <h3>Wishlist</h3>
+          <button>
+            See All
+            <MdKeyboardArrowRight />
+          </button>
+        </div>
+        <div className={styles["games-scroll"]}>
+          {Array.from({ length: 3 }).map((_, index) => (
+            <img
+              key={index}
+              className={styles["product-image"]}
+              src="images/DeadSpace.webp"
+            />
+          ))}
+        </div>
+      </section>
     </>
   );
 }

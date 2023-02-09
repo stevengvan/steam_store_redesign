@@ -90,18 +90,46 @@
   margin-right: 10px;
 }
 
+.offers-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+.offers-header > *:last-child {
+  font-size: medium;
+  color: #3a7afa;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+}
+.offers-header > *:last-child:hover {
+  color: #1b5ad8;
+  text-shadow: 0px 0px 10px #2c70f8;
+  transition-duration: 250ms;
+  cursor: pointer;
+}
+
 .games-scroll {
-  background-color: blue;
-  height: 15vh;
   display: grid;
-  margin-bottom: 2em;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5em;
+  margin-bottom: 4em;
+}
+
+.product-image {
+  border-radius: 0.5em;
+  max-width: 100%;
+  scroll-snap-align: start;
+  transition: transform 0.4s;
+}
+.product-image:hover {
+  cursor: pointer;
+  transform: scale(1.1);
 }
 
 @media screen and (min-width: 55rem) {
-  .container {
-    padding: 2rem 7.5rem;
-  }
-
   .hero-banner-container {
     border-radius: 0.5em;
     display: flex;

@@ -15,11 +15,13 @@ body,
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  position: absolute;
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   transform: translate(0, -93.5%);
   transition-duration: 500ms;
-  z-index: 5;
+  z-index: 7;
 }
 .show-navbar {
   transform: translate(0);
@@ -29,6 +31,7 @@ body,
   background-color: rgb(26, 25, 25);
   border-bottom: 2.5px solid rgb(73, 73, 73);
   padding: 0.75rem;
+  z-index: 10;
   display: flex;
   flex-direction: column;
 }
@@ -48,6 +51,11 @@ body,
   min-width: 40px;
   max-width: 40px;
 }
+.navbar-header > *:last-child {
+  position: absolute;
+  right: 1em;
+  font-size: 25px;
+}
 
 .navbar-list {
   margin-bottom: 2.5em;
@@ -58,15 +66,6 @@ body,
   display: flex;
   align-items: center;
   padding: 0.5em;
-}
-.navbar-list-item:hover {
-  cursor: pointer;
-  border-left: 10px solid #3574f1;
-  transition-duration: 150ms;
-}
-.navbar-list-item:hover > * {
-  color: #3574f1;
-  transition-duration: 250ms;
 }
 .navbar-list-item:not(:last-of-type) {
   margin-bottom: 0.5em;
@@ -121,20 +120,19 @@ body,
   display: flex;
   align-items: center;
   margin-bottom: 0.75em;
+  width: 100%;
+  word-break: break-all;
+  padding: 0.5em;
 }
 .navbar-setting > h4 {
   margin-left: 0.5em;
 }
-.navbar-setting > *:first-child {
-  font-size: 20px;
-  min-width: 20px;
-  max-width: 20px;
-  margin-right: 0.25em;
-}
+
 .profile-picture {
   background-color: white;
-  width: 40px;
-  height: 40px;
+  margin-right: 0.25em;
+  min-width: 50px;
+  min-height: 50px;
   border-radius: 0.5em;
 }
 
@@ -156,12 +154,20 @@ body,
   transition-duration: 250ms;
 }
 
+.main-container {
+  overflow-y: hidden;
+  width: 100%;
+  height: fit-content;
+  padding: 1.5rem;
+}
+
 @media screen and (min-width: 55rem) {
   .layout {
     display: flex;
   }
 
   .navbar-container {
+    background-color: rgb(26, 25, 25);
     position: sticky;
     inset: 0;
     width: fit-content;
@@ -185,11 +191,23 @@ body,
   .navbar-header {
     margin-bottom: 5rem;
   }
+  .navbar-header > *:last-child {
+    display: none;
+  }
 
   .navbar-list {
     flex: 1;
   }
 
+  .navbar-list-item:hover {
+    cursor: pointer;
+    border-left: 10px solid #3574f1;
+    transition-duration: 150ms;
+  }
+  .navbar-list-item:hover > * {
+    color: #3574f1;
+    transition-duration: 250ms;
+  }
   .navbar-setting {
     justify-content: space-between;
   }
@@ -197,11 +215,10 @@ body,
   .navbar-toggle {
     display: none;
   }
-}
 
-.main-container {
-  overflow-y: auto;
-  padding: 3rem 1.5rem 1.5rem 1.5rem;
+  .main-container {
+    padding: 3rem 6rem 1.5rem 6rem;
+  }
 }
 
 .genre {

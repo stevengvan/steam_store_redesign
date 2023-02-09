@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { FaSteam } from "react-icons/fa";
+import { AiOutlineClose } from "react-icons/ai";
 import { ImHome } from "react-icons/im";
 import { BiCategory } from "react-icons/bi";
 import { GiDramaMasks } from "react-icons/gi";
 import { BsListTask } from "react-icons/bs";
-import { IoMdSettings } from "react-icons/io";
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
 
 const Navbar = () => {
@@ -21,6 +21,7 @@ const Navbar = () => {
         <div className="navbar-header">
           <FaSteam />
           <span>Steam</span>
+          <AiOutlineClose onClick={() => setToggle(false)} />
         </div>
 
         <ul className="navbar-list">
@@ -234,9 +235,8 @@ const Navbar = () => {
         </ul>
 
         <div className="navbar-setting">
-          <IoMdSettings />
           <div className="profile-picture" />
-          <h4>thelegend27</h4>
+          <h4>thelegend27thelegend27</h4>
         </div>
       </div>
 

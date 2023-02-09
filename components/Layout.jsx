@@ -4,7 +4,7 @@ import Navbar from "./Navbar";
 
 const Layout = ({ children }) => {
   return (
-    <div>
+    <>
       <Head>
         <title>Welcome to Steam</title>
       </Head>
@@ -13,7 +13,7 @@ const Layout = ({ children }) => {
 
         <main className="main-container">{children}</main>
       </div>
-    </div>
+    </>
   );
 };
 
