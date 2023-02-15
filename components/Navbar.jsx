@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useStateContext } from "@/context/StateContext";
+import Link from "next/link";
 import { FaSteam } from "react-icons/fa";
 import { AiOutlineClose } from "react-icons/ai";
 import { ImHome } from "react-icons/im";
@@ -8,8 +10,8 @@ import { BsListTask } from "react-icons/bs";
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
 
 const Navbar = () => {
+  const { menu, setMenu } = useStateContext();
   const [toggle, setToggle] = useState(false);
-  const [current, setCurrent] = useState("home");
   const [dropdown, setDropdown] = useState("");
   const [dropdownItem, setDropdownItem] = useState("");
 
@@ -25,26 +27,28 @@ const Navbar = () => {
         </div>
 
         <ul className="navbar-list">
-          <li
-            className={
-              current === "home"
-                ? "navbar-list-item current-item"
-                : "navbar-list-item"
-            }
-            onClick={() => {
-              setCurrent("home");
-              setDropdown("");
-              setDropdownItem("");
-            }}
-          >
-            <ImHome />
-            <h4>Home</h4>
-          </li>
+          <Link href="/">
+            <li
+              className={
+                menu === "/"
+                  ? "navbar-list-item current-item"
+                  : "navbar-list-item"
+              }
+              onClick={() => {
+                setMenu("/");
+                setDropdown("");
+                setDropdownItem("");
+              }}
+            >
+              <ImHome />
+              <h4>Home</h4>
+            </li>
+          </Link>
 
           <li onClick={() => setDropdown("categories")}>
             <div
               className={
-                current === "categories"
+                menu.includes("categories")
                   ? "navbar-list-item current-item"
                   : "navbar-list-item"
               }
@@ -68,7 +72,7 @@ const Navbar = () => {
                   }
                   onClick={() => {
                     setDropdownItem("singleplayer");
-                    setCurrent("categories");
+                    setMenu("categories/singleplayer");
                   }}
                 >
                   Singleplayer
@@ -81,7 +85,7 @@ const Navbar = () => {
                   }
                   onClick={() => {
                     setDropdownItem("multiplayer");
-                    setCurrent("categories");
+                    setMenu("categories/multiplayer");
                   }}
                 >
                   Multiplayer
@@ -94,7 +98,7 @@ const Navbar = () => {
                   }
                   onClick={() => {
                     setDropdownItem("vr games");
-                    setCurrent("categories");
+                    setMenu("categories/vr_games");
                   }}
                 >
                   VR Games
@@ -107,7 +111,7 @@ const Navbar = () => {
                   }
                   onClick={() => {
                     setDropdownItem("software");
-                    setCurrent("categories");
+                    setMenu("categories/software");
                   }}
                 >
                   Software
@@ -120,7 +124,7 @@ const Navbar = () => {
                   }
                   onClick={() => {
                     setDropdownItem("cross platform");
-                    setCurrent("categories");
+                    setMenu("categories/cross_platform");
                   }}
                 >
                   Cross Platform
@@ -132,7 +136,7 @@ const Navbar = () => {
           <li onClick={() => setDropdown("genres")}>
             <div
               className={
-                current === "genres"
+                menu.includes("genres")
                   ? "navbar-list-item current-item"
                   : "navbar-list-item"
               }
@@ -150,13 +154,13 @@ const Navbar = () => {
               <ul className="menu-dropdown-list">
                 <li
                   className={
-                    dropdownItem === "role playing"
+                    dropdownItem === "roleplaying"
                       ? "menu-dropdown-item current-dropdown"
                       : "menu-dropdown-item"
                   }
                   onClick={() => {
-                    setDropdownItem("role playing");
-                    setCurrent("genres");
+                    setDropdownItem("roleplaying");
+                    setMenu("genres/roleplaying");
                   }}
                 >
                   Role Playing
@@ -169,7 +173,7 @@ const Navbar = () => {
                   }
                   onClick={() => {
                     setDropdownItem("shooter");
-                    setCurrent("genres");
+                    setMenu("genres/shooter");
                   }}
                 >
                   Shooter
@@ -182,7 +186,7 @@ const Navbar = () => {
                   }
                   onClick={() => {
                     setDropdown("action");
-                    setCurrent("genres");
+                    setMenu("genres/action");
                   }}
                 >
                   Action
@@ -195,7 +199,7 @@ const Navbar = () => {
                   }
                   onClick={() => {
                     setDropdownItem("stealth");
-                    setCurrent("genres");
+                    setMenu("genres/stealth");
                   }}
                 >
                   Stealth
@@ -208,7 +212,7 @@ const Navbar = () => {
                   }
                   onClick={() => {
                     setDropdownItem("horror");
-                    setCurrent("genres");
+                    setMenu("genres/horror");
                   }}
                 >
                   Horror
@@ -219,12 +223,12 @@ const Navbar = () => {
 
           <li
             className={
-              current === "wishlist"
+              menu === "wishlist"
                 ? "navbar-list-item current-item"
                 : "navbar-list-item"
             }
             onClick={() => {
-              setCurrent("wishlist");
+              setMenu("wishlist");
               setDropdown("");
               setDropdownItem("");
             }}

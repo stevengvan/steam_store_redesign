@@ -7,15 +7,13 @@
 
 .hero-banner-image {
   z-index: 0;
-  height: auto;
+  object-fit: cover;
+  height: 100%;
   border-radius: 0.5em;
   width: 100%;
   cursor: pointer;
   transition-duration: 250ms;
-  z-index: 2;
-}
-.hero-banner-image:hover {
-  transform: scale(1.075);
+  z-index: 10;
 }
 
 .hero-banner-info-container {
@@ -59,35 +57,6 @@
 
 .banner-genres {
   display: none;
-  flex-wrap: wrap;
-  width: 100%;
-}
-.banner-genres > * {
-  margin-right: 5px;
-  margin-bottom: 5px;
-}
-
-.purchase-btn {
-  background-color: #145eee;
-  color: white;
-  box-shadow: 0px 0px 15px #145eee;
-  border-radius: 0.5em;
-  padding: 0.5em;
-  outline: none;
-  border: none;
-  transition: transform 0.4s;
-  -webkit-transition: -webkit-transform 0.4s;
-}
-.purchase-btn:hover {
-  cursor: pointer;
-  -webkit-transform: scale(1.1) rotate(0.01deg);
-  transform: scale(1.1) rotate(0.01deg);
-}
-.purchase-btn * {
-  font-size: 1em;
-}
-.purchase-btn *:first-child {
-  margin-right: 10px;
 }
 
 .offers-header {
@@ -139,7 +108,9 @@
   .hero-banner-image {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
-    width: 75%;
+  }
+  .hero-banner-image:hover {
+    transform: scale(1.075);
   }
 
   .hero-banner-info-container {
@@ -152,9 +123,12 @@
     width: 25%;
     position: static;
   }
+  .hero-banner-info-container > *:last-child {
+    width: 100%;
+  }
 
   .banner-texts > *:first-child {
-    font-size: 1.75vw;
+    font-size: 2vw;
   }
   .banner-texts > *:last-child {
     font-size: 1.3vw;
@@ -163,21 +137,10 @@
 
   .banner-genres {
     display: flex;
-  }
-
-  .purchase-btn {
-    border-radius: 1em;
-    padding: 15px;
-    width: 100%;
-    display: flex;
     flex-wrap: wrap;
-    justify-content: center;
   }
-  .purchase-btn *:first-child {
-    margin-right: 10px;
-    font-size: small;
-  }
-  .purchase-btn *:last-child {
-    font-size: larger;
+  .banner-genres > *:not(:last-of-type) {
+    margin-right: 0.5em;
+    margin-bottom: 0.5em;
   }
 }

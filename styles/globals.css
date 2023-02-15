@@ -10,6 +10,9 @@ body,
   margin: 0;
   padding: 0;
 }
+a {
+  text-decoration: none;
+}
 
 .navbar-container {
   display: flex;
@@ -60,6 +63,10 @@ body,
 .navbar-list {
   margin-bottom: 2.5em;
   list-style: none;
+}
+.navbar-list > a:visited {
+  color: white;
+  text-decoration: none;
 }
 
 .navbar-list-item {
@@ -155,10 +162,13 @@ body,
 }
 
 .main-container {
-  overflow-y: hidden;
   width: 100%;
   height: fit-content;
   padding: 1.5rem;
+  overflow-y: auto;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
 }
 
 @media screen and (min-width: 55rem) {
@@ -224,7 +234,6 @@ body,
 .genre {
   background-color: rgb(70, 70, 70);
   color: white;
-  padding: 0.75em 0.75em;
   border-radius: 0.5em;
   min-width: 100px;
   border: none;
@@ -245,4 +254,76 @@ body,
 }
 .genre span {
   flex: 1;
+}
+.normal-tag {
+  padding: 0.75em 0.75em;
+}
+.skinny-tag {
+  padding: 0.25em 0.25em;
+}
+
+.purchase-btn {
+  font-size: 1em;
+  background-image: -webkit-linear-gradient(
+    left,
+    #145eee,
+    #0a3b9c,
+    rgb(6, 38, 100)
+  );
+  color: white;
+  border-radius: 0.5em;
+  padding: 0.5em;
+  background-size: 200% 200%;
+  -webkit-animation: Animation 5s ease infinite;
+  -moz-animation: Animation 5s ease infinite;
+  animation: Animation 5s ease infinite;
+  width: 100%;
+  outline: none;
+  border: none;
+  transition: transform 0.4s;
+  -webkit-transition: -webkit-transform 0.4s;
+}
+.purchase-btn:hover {
+  cursor: pointer;
+  -webkit-transform: scale(1.1) rotate(0.01deg);
+  transform: scale(1.1) rotate(0.01deg);
+}
+.purchase-btn * {
+  font-size: 1em;
+}
+.purchase-btn *:first-child {
+  margin-right: 10px;
+}
+@-webkit-keyframes Animation {
+  0% {
+    background-position: 10% 0%;
+  }
+  50% {
+    background-position: 91% 100%;
+  }
+  100% {
+    background-position: 10% 0%;
+  }
+}
+@-moz-keyframes Animation {
+  0% {
+    background-position: 10% 0%;
+  }
+  50% {
+    background-position: 91% 100%;
+  }
+  100% {
+    background-position: 10% 0%;
+  }
+}
+@keyframes Animation {
+  0% {
+    background-position: 10% 0%;
+  }
+  50% {
+    background-position: 91% 100%;
+  }
+  100% {
+    background-position: 10% 0%;
+  }
 }

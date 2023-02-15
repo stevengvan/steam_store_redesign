@@ -2,6 +2,7 @@ import React from "react";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import HeroBanner from "@/components/HeroBanner";
 import styles from "@/styles/Home.module.css";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -20,11 +21,9 @@ export default function Home() {
         </div>
         <div className={styles["games-scroll"]}>
           {Array.from({ length: 3 }).map((_, index) => (
-            <img
-              key={index}
-              className={styles["product-image"]}
-              src="images/DeadSpace.webp"
-            />
+            <Link key={index} href={"/product/Dead-Space"}>
+              <img className={styles["product-image"]} src="/DeadSpace.webp" />
+            </Link>
           ))}
         </div>
       </section>
@@ -39,11 +38,9 @@ export default function Home() {
         </div>
         <div className={styles["games-scroll"]}>
           {Array.from({ length: 3 }).map((_, index) => (
-            <img
-              key={index}
-              className={styles["product-image"]}
-              src="images/DeadSpace.webp"
-            />
+            <Link key={index} href={"/product/Dead-Space"}>
+              <img className={styles["product-image"]} src="/DeadSpace.webp" />
+            </Link>
           ))}
         </div>
       </section>
@@ -58,11 +55,9 @@ export default function Home() {
         </div>
         <div className={styles["games-scroll"]}>
           {Array.from({ length: 3 }).map((_, index) => (
-            <img
-              key={index}
-              className={styles["product-image"]}
-              src="images/DeadSpace.webp"
-            />
+            <Link key={index} href={"/product/Dead-Space"}>
+              <img className={styles["product-image"]} src="/DeadSpace.webp" />
+            </Link>
           ))}
         </div>
       </section>
