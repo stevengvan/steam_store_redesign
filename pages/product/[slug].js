@@ -29,8 +29,11 @@ export default function Product() {
 
   // create an event listener
   useEffect(() => {
+    if (window.innerWidth > 1120) {
+      setPageMenu("product");
+    }
     window.addEventListener("resize", handleResize);
-  }, [screenSize]);
+  }, [pageMenu, screenSize]);
 
   return (
     <>
@@ -171,7 +174,7 @@ export default function Product() {
       </section>
 
       {pageMenu === "desc" && (
-        <section className={styles["product-desc"]}>
+        <section className={styles["product-desc-section"]}>
           <p className={styles["product-description-text"]}>
             Forge a new path and wage an unconventional war for the freedom of
             Tsushima. Challenge opponents with your katana, master the bow to
@@ -205,12 +208,104 @@ export default function Product() {
       )}
 
       {pageMenu === "product" && (
-        <section className={styles["products-list"]}>
-          <div>
-            <h3>Standard Edition</h3>
-            <h3></h3>
+        <section className={styles["products-section"]}>
+          <div className={styles["game-products"]}>
+            <div className="editions-section">
+              <h2 className={styles["editions-header"]}>Game Editions</h2>
+              <div className={styles["editions-list"]}>
+                <div className={styles["edition-con"]}>
+                  <span className={styles["edition-header"]}>
+                    <h5 className={styles["edition-tag"]}>Base Game</h5>
+                    <h2>Ghost of Tsushima</h2>
+                  </span>
+                  <div className={styles["edition-purchase-con"]}>
+                    <div className={styles["edition-price"]}>
+                      <span>$59.99</span>
+                    </div>
+                    <button
+                      className={`purchase-btn ${styles["edition-purchase-btn"]}`}
+                    >
+                      Add to cart
+                    </button>
+                  </div>
+                </div>
+
+                <div className={styles["edition-con"]}>
+                  <span className={styles["edition-header"]}>
+                    <h5 className={styles["edition-tag"]}>Edition</h5>
+                    <h2>Ghost of Tsushima DIRECTOR’S CUT</h2>
+                  </span>
+                  <div className={styles["edition-purchase-con"]}>
+                    <div className={styles["edition-price"]}>
+                      <h2>29%</h2>
+                      <span>
+                        <p className={styles["edition-price-original"]}>
+                          $69.99
+                        </p>
+                        <p>$49.99</p>
+                      </span>
+                    </div>
+                    <button
+                      className={`purchase-btn ${styles["edition-purchase-btn"]}`}
+                    >
+                      Add to cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="additional-section">
+              <div className={styles["additional-header"]}>
+                <h2>Additional Content</h2> <button>Browse All</button>
+              </div>
+              <ul className={styles["additional-list"]}>
+                <li>
+                  <button className={styles["additional-item"]}>
+                    Bonus Content
+                  </button>
+                </li>
+                <li>
+                  <button className={styles["additional-item"]}>
+                    Iki Island Expansion
+                  </button>
+                </li>
+                <li>
+                  <button className={styles["additional-item"]}>
+                    Digital mini art book
+                  </button>
+                </li>
+              </ul>
+              <div className={styles["additional-purchase-con"]}>
+                <div className={styles["additional-purchase-price"]}>$9.99</div>
+                <button
+                  className={`purchase-btn ${styles["additional-purchase-btn"]}`}
+                >
+                  Add all to cart
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div className="recommended-games">
+            <h1>Games like this</h1>
+            <div className={styles["recommended-list"]}>
+              {Array.from({ length: 5 }).map((_, index) => (
+                <Link href="/">
+                  <img
+                    key={index}
+                    src="/DeadSpace.webp"
+                    className={styles["recommended-game"]}
+                  />
+                </Link>
+              ))}
+            </div>
           </div>
         </section>
+      )}
+
+      {pageMenu === "spec" && (
+        <section className={styles["product-spec"]}></section>
       )}
     </>
   );

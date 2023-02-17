@@ -291,7 +291,7 @@ a {
 .purchase-btn * {
   font-size: 1em;
 }
-.purchase-btn *:first-child {
+.purchase-btn *:first-child:not(:last-child) {
   margin-right: 10px;
 }
 @-webkit-keyframes Animation {
