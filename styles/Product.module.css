@@ -27,6 +27,11 @@
   border-radius: 0.5em;
   padding: 0.5em;
 }
+.product-header > span > button:hover {
+  background-color: rgb(102, 102, 102);
+  cursor: pointer;
+  transition: 250ms;
+}
 .product-header > span > button:not(:last-of-type) {
   margin-right: 0.5em;
 }
@@ -47,16 +52,6 @@
   background-color: rgb(39, 39, 39);
   border-radius: 0.5em;
   display: none;
-}
-
-.product-hero-info > .genres-list {
-  margin-bottom: 0.5em;
-  display: flex;
-  flex-wrap: wrap;
-}
-.product-hero-info > .genres-list > *:not(:last-of-type) {
-  margin-right: 0.5em;
-  margin-bottom: 0.5em;
 }
 
 .product-other-info {
@@ -104,7 +99,7 @@
 
 .page-menu {
   margin-top: 1.25rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 .page-menu > * {
   background-color: rgb(46, 46, 46);
@@ -112,6 +107,9 @@
   padding: 0.25em 0.5em;
   border-radius: 0.5em;
   border: none;
+}
+.page-menu > *:hover {
+  cursor: pointer;
 }
 .page-menu > *:not(:last-of-type) {
   margin-right: 0.5em;
@@ -146,12 +144,12 @@
   max-width: 100%;
 }
 
-.product-desc-section > .genres-list {
+.genres-list {
   margin-bottom: 0.5em;
   display: flex;
   flex-wrap: wrap;
 }
-.product-desc-section > .genres-list > *:not(:last-of-type) {
+.genres-list > *:not(:last-of-type) {
   margin-right: 0.5em;
   margin-bottom: 0.5em;
 }
@@ -180,7 +178,11 @@
 .edition-header {
   display: flex;
   align-items: flex-start;
+  justify-content: space-between;
   margin-bottom: 1em;
+}
+.edition-header > h2 {
+  width: 60%;
 }
 
 .edition-tag {
@@ -259,6 +261,7 @@
 
 .additional-purchase-price {
   height: 100%;
+  margin-right: 0.5em;
 }
 
 .additional-purchase-btn {
@@ -283,6 +286,64 @@
 .recommended-game {
   border-radius: 0.5em;
   max-height: 100%;
+}
+
+.system-menu {
+  background-image: linear-gradient(
+    90deg,
+    rgba(70, 70, 70, 1),
+    rgba(70, 70, 70, 0.5),
+    rgba(70, 70, 70, 0)
+  );
+  padding-top: 0.25em;
+  margin-bottom: 0.5em;
+  display: flex;
+  list-style-type: none;
+}
+.system-menu > *:not(:last-of-type) {
+  margin-right: 0.5em;
+}
+.system-menu > *:first-child > button {
+  border-top-left-radius: 0;
+}
+
+.system-menu-btn {
+  color: white;
+  background-color: transparent;
+  border-radius: 0.5em 0.5em 0 0;
+  padding: 0.25em 0.5em;
+  border: none;
+}
+.system-menu-btn:hover {
+  background-color: rgb(151, 151, 151);
+  cursor: pointer;
+  transition: 250ms;
+}
+.system-menu-selected {
+  background-color: rgb(26, 25, 25);
+  color: white;
+  border-radius: 0.5em 0.5em 0 0;
+  padding: 0.25em 0.5em;
+  border: none;
+}
+
+.system-desc-min {
+  margin-bottom: 1em;
+}
+.system-desc-min > *:first-child {
+  text-decoration: underline;
+}
+.system-desc-min > *:not(:first-child) > span {
+  color: rgb(81, 158, 247);
+  font-weight: bold;
+}
+
+.system-desc-rec > *:first-child {
+  text-decoration: underline;
+}
+.system-desc-rec > *:not(:first-child) > span {
+  color: rgb(81, 158, 247);
+  font-weight: bold;
 }
 
 @media (orientation: landscape) {
@@ -316,10 +377,6 @@
 
   .game-info {
     display: block;
-  }
-
-  .product-desc-section {
-    display: none;
   }
 
   .carousel {
@@ -365,5 +422,17 @@
 
   .desc-menu > *:hover {
     cursor: pointer;
+  }
+
+  .system-desc-con {
+    display: flex;
+  }
+
+  .system-desc-min {
+    flex: 1;
+    margin-right: 1em;
+  }
+  .system-desc-rec {
+    flex: 1;
   }
 }
