@@ -1,0 +1,63 @@
+.products-list {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 1em;
+  row-gap: 2em;
+}
+
+.carousel-wrapper .control-dots {
+  width: fit-content;
+}
+.carousel-item {
+  background-color: blue;
+  display: flex;
+  height: 55vh;
+}
+.carousel-item > div {
+  background-image: -webkit-linear-gradient(
+    right,
+    rgb(0, 0, 0),
+    rgba(0, 0, 0, 0)
+  );
+  padding: 1em 1em 1.75em 0;
+  width: 30%;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 100;
+}
+.carousel-item > div > h1:hover {
+  cursor: pointer;
+}
+.carousel-item > div > p {
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.genres-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.genres-list > * {
+  margin-right: 0.5em;
+}
+.genres-list > *:not(:last-of-type) {
+  margin-bottom: 0.5em;
+}
+
+.carousel-image {
+  display: flex;
+  flex: 2;
+  object-fit: cover;
+  height: 100%;
+  width: auto;
+}
+
+.product-container {
+  /* background-color: red; */
+}

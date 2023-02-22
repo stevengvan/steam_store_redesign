@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useStateContext } from "@/context/StateContext";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { FaSteam } from "react-icons/fa";
 import { AiOutlineClose } from "react-icons/ai";
 import { ImHome } from "react-icons/im";
@@ -10,6 +11,8 @@ import { BsListTask } from "react-icons/bs";
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
 
 const Navbar = () => {
+  const router = useRouter();
+  const { slug } = router.query;
   const { menu, setMenu } = useStateContext();
   const [toggle, setToggle] = useState(false);
   const [dropdown, setDropdown] = useState("");
@@ -30,12 +33,11 @@ const Navbar = () => {
           <Link href="/">
             <li
               className={
-                menu === "/"
+                router.pathname === "/"
                   ? "navbar-list-item current-item"
                   : "navbar-list-item"
               }
               onClick={() => {
-                setMenu("/");
                 setDropdown("");
                 setDropdownItem("");
               }}
@@ -45,175 +47,170 @@ const Navbar = () => {
             </li>
           </Link>
 
-          <li onClick={() => setDropdown("categories")}>
-            <div
-              className={
-                menu.includes("categories")
-                  ? "navbar-list-item current-item"
-                  : "navbar-list-item"
-              }
-            >
-              <BiCategory />
-              <h4>Categories</h4>
+          <li>
+            <div className="navbar-dropdown-con">
+              <div
+                className={
+                  router.pathname.includes("categories") && !slug
+                    ? "navbar-list-item current-item"
+                    : "navbar-list-item"
+                }
+                onClick={() => setMenu("categories")}
+              >
+                <BiCategory />
+                <h4>Categories</h4>
+              </div>
               {dropdown === "categories" ? (
-                <MdKeyboardArrowUp size={25} />
+                <MdKeyboardArrowUp
+                  size={25}
+                  onClick={
+                    router.pathname.includes("categories") && slug
+                      ? () => ""
+                      : () => setDropdown("")
+                  }
+                />
               ) : (
-                <MdKeyboardArrowDown size={25} />
+                <MdKeyboardArrowDown
+                  size={25}
+                  onClick={() => setDropdown("categories")}
+                />
               )}
             </div>
 
-            {dropdown === "categories" && (
+            {(dropdown === "categories" ||
+              (router.pathname.includes("categories") && slug)) && (
               <ul className="menu-dropdown-list">
-                <li
+                <Link
                   className={
-                    dropdownItem === "singleplayer"
+                    slug && slug === "singleplayer"
                       ? "menu-dropdown-item current-dropdown"
                       : "menu-dropdown-item"
                   }
-                  onClick={() => {
-                    setDropdownItem("singleplayer");
-                    setMenu("categories/singleplayer");
-                  }}
+                  href="/categories/singleplayer"
                 >
-                  Singleplayer
-                </li>
-                <li
+                  <li>Singleplayer</li>
+                </Link>
+
+                <Link
                   className={
-                    dropdownItem === "multiplayer"
+                    slug && slug === "multiplayer"
                       ? "menu-dropdown-item current-dropdown"
                       : "menu-dropdown-item"
                   }
-                  onClick={() => {
-                    setDropdownItem("multiplayer");
-                    setMenu("categories/multiplayer");
-                  }}
+                  href="/categories/multiplayer"
                 >
-                  Multiplayer
-                </li>
-                <li
+                  <li>Multiplayer</li>
+                </Link>
+
+                <Link
                   className={
-                    dropdownItem === "vr games"
+                    slug && slug === "vr games"
                       ? "menu-dropdown-item current-dropdown"
                       : "menu-dropdown-item"
                   }
-                  onClick={() => {
-                    setDropdownItem("vr games");
-                    setMenu("categories/vr_games");
-                  }}
+                  href="/categories/vr_games"
                 >
-                  VR Games
-                </li>
-                <li
+                  <li>VR Games</li>
+                </Link>
+
+                <Link
                   className={
-                    dropdownItem === "software"
+                    slug && slug === "software"
                       ? "menu-dropdown-item current-dropdown"
                       : "menu-dropdown-item"
                   }
-                  onClick={() => {
-                    setDropdownItem("software");
-                    setMenu("categories/software");
-                  }}
+                  href="/categories/software"
                 >
-                  Software
-                </li>
-                <li
+                  <li>Software</li>
+                </Link>
+
+                <Link
                   className={
-                    dropdownItem === "cross platform"
+                    slug && slug === "cross platform"
                       ? "menu-dropdown-item current-dropdown"
                       : "menu-dropdown-item"
                   }
-                  onClick={() => {
-                    setDropdownItem("cross platform");
-                    setMenu("categories/cross_platform");
-                  }}
+                  href="/categories/cross_platform"
                 >
-                  Cross Platform
-                </li>
+                  <li>Cross Platform</li>
+                </Link>
               </ul>
             )}
           </li>
 
-          <li onClick={() => setDropdown("genres")}>
-            <div
-              className={
-                menu.includes("genres")
-                  ? "navbar-list-item current-item"
-                  : "navbar-list-item"
-              }
-            >
-              <GiDramaMasks />
-              <h4>Genres</h4>
+          <li>
+            <div className="navbar-dropdown-con">
+              <div
+                className={
+                  router.pathname.includes("genres") && !slug
+                    ? "navbar-list-item current-item"
+                    : "navbar-list-item"
+                }
+                onClick={() => setMenu("genres")}
+              >
+                <GiDramaMasks />
+                <h4>Genres</h4>
+              </div>
+
               {dropdown === "genres" ? (
-                <MdKeyboardArrowUp size={25} />
+                <MdKeyboardArrowUp size={25} onClick={() => setDropdown("")} />
               ) : (
-                <MdKeyboardArrowDown size={25} />
+                <MdKeyboardArrowDown
+                  size={25}
+                  onClick={
+                    router.pathname.includes("genres") && slug
+                      ? () => ""
+                      : () => setDropdown("genres")
+                  }
+                />
               )}
             </div>
 
-            {dropdown === "genres" && (
+            {(dropdown === "genres" ||
+              (router.pathname.includes("genres") && slug)) && (
               <ul className="menu-dropdown-list">
                 <li
                   className={
-                    dropdownItem === "roleplaying"
+                    slug && slug === "roleplaying"
                       ? "menu-dropdown-item current-dropdown"
                       : "menu-dropdown-item"
                   }
-                  onClick={() => {
-                    setDropdownItem("roleplaying");
-                    setMenu("genres/roleplaying");
-                  }}
                 >
                   Role Playing
                 </li>
                 <li
                   className={
-                    dropdownItem === "shooter"
+                    slug && slug === "shooter"
                       ? "menu-dropdown-item current-dropdown"
                       : "menu-dropdown-item"
                   }
-                  onClick={() => {
-                    setDropdownItem("shooter");
-                    setMenu("genres/shooter");
-                  }}
                 >
                   Shooter
                 </li>
                 <li
                   className={
-                    dropdownItem === "action"
+                    slug && slug === "action"
                       ? "menu-dropdown-item current-dropdown"
                       : "menu-dropdown-item"
                   }
-                  onClick={() => {
-                    setDropdown("action");
-                    setMenu("genres/action");
-                  }}
                 >
                   Action
                 </li>
                 <li
                   className={
-                    dropdownItem === "stealth"
+                    slug && slug === "stealth"
                       ? "menu-dropdown-item current-dropdown"
                       : "menu-dropdown-item"
                   }
-                  onClick={() => {
-                    setDropdownItem("stealth");
-                    setMenu("genres/stealth");
-                  }}
                 >
                   Stealth
                 </li>
                 <li
                   className={
-                    dropdownItem === "horror"
+                    slug && slug === "horror"
                       ? "menu-dropdown-item current-dropdown"
                       : "menu-dropdown-item"
                   }
-                  onClick={() => {
-                    setDropdownItem("horror");
-                    setMenu("genres/horror");
-                  }}
                 >
                   Horror
                 </li>
@@ -223,15 +220,10 @@ const Navbar = () => {
 
           <li
             className={
-              menu === "wishlist"
+              router.pathname.includes("wishlist")
                 ? "navbar-list-item current-item"
                 : "navbar-list-item"
             }
-            onClick={() => {
-              setMenu("wishlist");
-              setDropdown("");
-              setDropdownItem("");
-            }}
           >
             <BsListTask />
             <h4>Wishlist</h4>

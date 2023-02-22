@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import GenreTag from "@/components/GenreTag";
+import ProductItem from "@/components/ProductItem";
 import { AiFillWindows, AiFillApple } from "react-icons/ai";
 import { FaSteam } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
@@ -298,13 +299,7 @@ export default function Product() {
             <h1>Games like this</h1>
             <div className={styles["recommended-list"]}>
               {Array.from({ length: 5 }).map((_, index) => (
-                <Link href="/">
-                  <img
-                    key={index}
-                    src="/DeadSpace.webp"
-                    className={styles["recommended-game"]}
-                  />
-                </Link>
+                <ProductItem key={index} />
               ))}
             </div>
           </div>

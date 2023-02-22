@@ -1,6 +1,7 @@
 import React from "react";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import HeroBanner from "@/components/HeroBanner";
+import ProductItem from "@/components/ProductItem";
 import styles from "@/styles/Home.module.css";
 import Link from "next/link";
 
@@ -21,9 +22,7 @@ export default function Home() {
         </div>
         <div className={styles["games-scroll"]}>
           {Array.from({ length: 3 }).map((_, index) => (
-            <Link key={index} href={"/product/Dead-Space"}>
-              <img className={styles["product-image"]} src="/DeadSpace.webp" />
-            </Link>
+            <ProductItem key={index} />
           ))}
         </div>
       </section>
@@ -38,9 +37,7 @@ export default function Home() {
         </div>
         <div className={styles["games-scroll"]}>
           {Array.from({ length: 3 }).map((_, index) => (
-            <Link key={index} href={"/product/Dead-Space"}>
-              <img className={styles["product-image"]} src="/DeadSpace.webp" />
-            </Link>
+            <ProductItem key={index} />
           ))}
         </div>
       </section>
@@ -55,9 +52,7 @@ export default function Home() {
         </div>
         <div className={styles["games-scroll"]}>
           {Array.from({ length: 3 }).map((_, index) => (
-            <Link key={index} href={"/product/Dead-Space"}>
-              <img className={styles["product-image"]} src="/DeadSpace.webp" />
-            </Link>
+            <ProductItem key={index} />
           ))}
         </div>
       </section>
