@@ -8,6 +8,7 @@ const HeroBanner = () => {
       <Link href={"/product/ghost-of-tsushima"}>
         <img
           className={styles["hero-banner-image"]}
+          alt="Hero banner image"
           src="/Ghost_of_Tsushima_-_hero_image.original.jpg"
         />
       </Link>

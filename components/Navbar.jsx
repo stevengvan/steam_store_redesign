@@ -13,10 +13,8 @@ import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
 const Navbar = () => {
   const router = useRouter();
   const { slug } = router.query;
-  const { menu, setMenu } = useStateContext();
   const [toggle, setToggle] = useState(false);
   const [dropdown, setDropdown] = useState("");
-  const [dropdownItem, setDropdownItem] = useState("");
 
   return (
     <nav
@@ -25,13 +23,14 @@ const Navbar = () => {
       <div className="navbar-menu">
         <div className="navbar-header">
           <FaSteam />
-          <span>Steam</span>
+          <h1>Steam</h1>
           <AiOutlineClose onClick={() => setToggle(false)} />
         </div>
 
         <ul className="navbar-list">
           <Link href="/">
             <li
+              tabIndex={0}
               className={
                 router.pathname === "/"
                   ? "navbar-list-item current-item"
@@ -39,7 +38,7 @@ const Navbar = () => {
               }
               onClick={() => {
                 setDropdown("");
-                setDropdownItem("");
+                setToggle(false);
               }}
             >
               <ImHome />
@@ -49,17 +48,18 @@ const Navbar = () => {
 
           <li>
             <div className="navbar-dropdown-con">
-              <div
-                className={
-                  router.pathname.includes("categories") && !slug
-                    ? "navbar-list-item current-item"
-                    : "navbar-list-item"
-                }
-                onClick={() => setMenu("categories")}
-              >
-                <BiCategory />
-                <h4>Categories</h4>
-              </div>
+              <Link href="/categories">
+                <div
+                  className={
+                    router.pathname.includes("categories") && !slug
+                      ? "navbar-list-item current-item"
+                      : "navbar-list-item"
+                  }
+                >
+                  <BiCategory />
+                  <h4>Categories</h4>
+                </div>
+              </Link>
               {dropdown === "categories" ? (
                 <MdKeyboardArrowUp
                   size={25}
@@ -87,6 +87,7 @@ const Navbar = () => {
                       : "menu-dropdown-item"
                   }
                   href="/categories/singleplayer"
+                  onClick={() => setToggle(false)}
                 >
                   <li>Singleplayer</li>
                 </Link>
@@ -98,17 +99,19 @@ const Navbar = () => {
                       : "menu-dropdown-item"
                   }
                   href="/categories/multiplayer"
+                  onClick={() => setToggle(false)}
                 >
                   <li>Multiplayer</li>
                 </Link>
 
                 <Link
                   className={
-                    slug && slug === "vr games"
+                    slug && slug === "vr_games"
                       ? "menu-dropdown-item current-dropdown"
                       : "menu-dropdown-item"
                   }
                   href="/categories/vr_games"
+                  onClick={() => setToggle(false)}
                 >
                   <li>VR Games</li>
                 </Link>
@@ -120,17 +123,19 @@ const Navbar = () => {
                       : "menu-dropdown-item"
                   }
                   href="/categories/software"
+                  onClick={() => setToggle(false)}
                 >
                   <li>Software</li>
                 </Link>
 
                 <Link
                   className={
-                    slug && slug === "cross platform"
+                    slug && slug === "cross_platform"
                       ? "menu-dropdown-item current-dropdown"
                       : "menu-dropdown-item"
                   }
                   href="/categories/cross_platform"
+                  onClick={() => setToggle(false)}
                 >
                   <li>Cross Platform</li>
                 </Link>
@@ -140,23 +145,27 @@ const Navbar = () => {
 
           <li>
             <div className="navbar-dropdown-con">
-              <div
-                className={
-                  router.pathname.includes("genres") && !slug
-                    ? "navbar-list-item current-item"
-                    : "navbar-list-item"
-                }
-                onClick={() => setMenu("genres")}
-              >
-                <GiDramaMasks />
-                <h4>Genres</h4>
-              </div>
+              <Link href="/genres">
+                <div
+                  className={
+                    router.pathname.includes("genres") && !slug
+                      ? "navbar-list-item current-item"
+                      : "navbar-list-item"
+                  }
+                >
+                  <GiDramaMasks />
+                  <h4>Genres</h4>
+                </div>
+              </Link>
 
               {dropdown === "genres" ? (
-                <MdKeyboardArrowUp size={25} onClick={() => setDropdown("")} />
+                <MdKeyboardArrowUp
+                  size={25}
+                  tabIndex={0}
+                  onClick={() => setDropdown("")}
+                />
               ) : (
                 <MdKeyboardArrowDown
-                  size={25}
                   onClick={
                     router.pathname.includes("genres") && slug
                       ? () => ""
@@ -169,65 +178,81 @@ const Navbar = () => {
             {(dropdown === "genres" ||
               (router.pathname.includes("genres") && slug)) && (
               <ul className="menu-dropdown-list">
-                <li
+                <Link
+                  href="/genres/roleplaying"
                   className={
                     slug && slug === "roleplaying"
                       ? "menu-dropdown-item current-dropdown"
                       : "menu-dropdown-item"
                   }
                 >
-                  Role Playing
-                </li>
-                <li
+                  <li>Role Playing</li>
+                </Link>
+
+                <Link
+                  href="/genres/shooter"
                   className={
                     slug && slug === "shooter"
                       ? "menu-dropdown-item current-dropdown"
                       : "menu-dropdown-item"
                   }
                 >
-                  Shooter
-                </li>
-                <li
+                  <li>Shooter</li>
+                </Link>
+
+                <Link
+                  href="/genres/action"
                   className={
                     slug && slug === "action"
                       ? "menu-dropdown-item current-dropdown"
                       : "menu-dropdown-item"
                   }
                 >
-                  Action
-                </li>
-                <li
+                  <li>Action</li>
+                </Link>
+
+                <Link
+                  href="/genres/stealth"
                   className={
                     slug && slug === "stealth"
                       ? "menu-dropdown-item current-dropdown"
                       : "menu-dropdown-item"
                   }
                 >
-                  Stealth
-                </li>
-                <li
+                  <li>Stealth</li>
+                </Link>
+
+                <Link
+                  href="/genres/horror"
                   className={
                     slug && slug === "horror"
                       ? "menu-dropdown-item current-dropdown"
                       : "menu-dropdown-item"
                   }
                 >
-                  Horror
-                </li>
+                  <li>Horror</li>
+                </Link>
               </ul>
             )}
           </li>
 
-          <li
-            className={
-              router.pathname.includes("wishlist")
-                ? "navbar-list-item current-item"
-                : "navbar-list-item"
-            }
-          >
-            <BsListTask />
-            <h4>Wishlist</h4>
-          </li>
+          <Link href="/wishlist">
+            <li
+              tabIndex={0}
+              className={
+                router.pathname.includes("wishlist")
+                  ? "navbar-list-item current-item"
+                  : "navbar-list-item"
+              }
+              onClick={() => {
+                setDropdown("");
+                setToggle(false);
+              }}
+            >
+              <BsListTask />
+              <h4>Wishlist</h4>
+            </li>
+          </Link>
         </ul>
 
         <div className="navbar-setting">

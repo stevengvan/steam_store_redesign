@@ -2,8 +2,6 @@ import React from "react";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import HeroBanner from "@/components/HeroBanner";
 import ProductItem from "@/components/ProductItem";
-import styles from "@/styles/Home.module.css";
-import Link from "next/link";
 
 export default function Home() {
   return (
@@ -13,14 +11,14 @@ export default function Home() {
       </section>
 
       <section>
-        <div className={styles["offers-header"]}>
+        <div className="offers-header">
           <h3>Special Offers</h3>
           <button>
             See All
             <MdKeyboardArrowRight />
           </button>
         </div>
-        <div className={styles["games-scroll"]}>
+        <div className="games-grid">
           {Array.from({ length: 3 }).map((_, index) => (
             <ProductItem key={index} />
           ))}
@@ -28,14 +26,14 @@ export default function Home() {
       </section>
 
       <section>
-        <div className={styles["offers-header"]}>
+        <div className="offers-header">
           <h3>Most Popular</h3>
           <button>
             See All
             <MdKeyboardArrowRight />
           </button>
         </div>
-        <div className={styles["games-scroll"]}>
+        <div className="games-grid">
           {Array.from({ length: 3 }).map((_, index) => (
             <ProductItem key={index} />
           ))}
@@ -43,14 +41,14 @@ export default function Home() {
       </section>
 
       <section>
-        <div className={styles["offers-header"]}>
+        <div className="offers-header">
           <h3>Wishlist</h3>
           <button>
             See All
             <MdKeyboardArrowRight />
           </button>
         </div>
-        <div className={styles["games-scroll"]}>
+        <div className="games-grid">
           {Array.from({ length: 3 }).map((_, index) => (
             <ProductItem key={index} />
           ))}

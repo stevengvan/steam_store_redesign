@@ -6,15 +6,10 @@ import { Carousel } from "react-responsive-carousel";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import GenreTag from "@/components/GenreTag";
 
-const Category = () => {
-  const router = useRouter();
-  const { slug } = router.query;
-
+const CategoryHome = () => {
   return (
     <>
-      <h1 className="page-title">
-        {String(slug).replace(/_/g, " ").toUpperCase()}
-      </h1>
+      <h1 className="page-title">Categories</h1>
 
       <Carousel className="carousel-wrapper">
         <div className="carousel-item">
@@ -185,4 +180,4 @@ const Category = () => {
   );
 };
 
-export default Category;
+export default CategoryHome;

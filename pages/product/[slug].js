@@ -71,7 +71,7 @@ export default function Product() {
       )}
 
       <section className={styles["product-header"]}>
-        <button>
+        <button alt="backbutton">
           <Link href={menu}>
             <IoChevronBack />
           </Link>
@@ -87,6 +87,7 @@ export default function Product() {
 
       <section className={styles["product-hero"]}>
         <img
+          alt="Product hero image"
           className={styles["product-hero-image"]}
           src="/Ghost_of_Tsushima_-_hero_image.original.jpg"
         />
@@ -129,6 +130,8 @@ export default function Product() {
             setToggleImage(true);
             setImageIndex(1);
           }}
+          tabIndex={0}
+          alt="product image sample"
           className={styles["list-image"]}
           src="/Ghost_of_Tsushima_1.webp"
         />
@@ -137,6 +140,8 @@ export default function Product() {
             setToggleImage(true);
             setImageIndex(2);
           }}
+          tabIndex={0}
+          alt="product image sample"
           className={styles["list-image"]}
           src="/Ghost_of_Tsushima_2.webp"
         />
@@ -145,6 +150,8 @@ export default function Product() {
             setToggleImage(true);
             setImageIndex(3);
           }}
+          tabIndex={0}
+          alt="product image sample"
           className={styles["list-image"]}
           src="/Ghost_of_Tsushima_3.webp"
         />

@@ -6,7 +6,7 @@ import { Carousel } from "react-responsive-carousel";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import GenreTag from "@/components/GenreTag";
 
-const Category = () => {
+const Wishlist = () => {
   const router = useRouter();
   const { slug } = router.query;
 
@@ -185,4 +185,4 @@ const Category = () => {
   );
 };
 
-export default Category;
+export default Wishlist;
