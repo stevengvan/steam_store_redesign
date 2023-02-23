@@ -258,13 +258,13 @@ a:visited {
 }
 .genre:hover {
   cursor: pointer;
-  background-color: rgb(54, 54, 54);
+  background-color: rgb(22, 22, 22);
   box-shadow: 0px 0px 15px #1f1f1f;
   transition-duration: 250ms;
 }
 .genre:focus {
   cursor: pointer;
-  background-color: rgb(54, 54, 54);
+  background-color: rgb(22, 22, 22);
   box-shadow: 0px 0px 15px #1f1f1f;
 }
 .genre *:first-child {

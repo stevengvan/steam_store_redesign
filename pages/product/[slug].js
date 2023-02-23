@@ -9,12 +9,12 @@ import { IoClose } from "react-icons/io5";
 import { IoChevronBack } from "react-icons/io5";
 import styles from "@/styles/Product.module.css";
 import Link from "next/link";
-import { useStateContext } from "@/context/StateContext";
 import { BiWindow } from "react-icons/bi";
 import { BsApple } from "react-icons/bs";
+import { useRouter } from "next/router";
 
 export default function Product() {
-  const { menu } = useStateContext();
+  const router = useRouter();
   const [screenSize, setScreenSize] = useState("small");
   const [toggleImage, setToggleImage] = useState(false);
   const [imageIndex, setImageIndex] = useState(0);
@@ -71,10 +71,8 @@ export default function Product() {
       )}
 
       <section className={styles["product-header"]}>
-        <button alt="backbutton">
-          <Link href={menu}>
-            <IoChevronBack />
-          </Link>
+        <button alt="Go back to previous page" onClick={() => router.back()}>
+          <IoChevronBack />
         </button>
         <span>
           <button>Add to your wishlist</button>
