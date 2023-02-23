@@ -12,9 +12,7 @@ const Wishlist = () => {
 
   return (
     <>
-      <h1 className="page-title">
-        {String(slug).replace(/_/g, " ").toUpperCase()}
-      </h1>
+      <h1 className="page-title">WISHLIST</h1>
 
       <Carousel className="carousel-wrapper">
         <div className="carousel-item">

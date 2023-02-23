@@ -8,7 +8,7 @@ import GenreTag from "@/components/GenreTag";
 const GenreHome = () => {
   return (
     <>
-      <h1 className="page-title">Categories</h1>
+      <h1 className="page-title">GENRES</h1>
 
       <Carousel className="carousel-wrapper">
         <div className="carousel-item">

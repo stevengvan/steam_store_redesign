@@ -9,7 +9,7 @@ import GenreTag from "@/components/GenreTag";
 const CategoryHome = () => {
   return (
     <>
-      <h1 className="page-title">Categories</h1>
+      <h1 className="page-title">CATEGORIES</h1>
 
       <Carousel className="carousel-wrapper">
         <div className="carousel-item">
