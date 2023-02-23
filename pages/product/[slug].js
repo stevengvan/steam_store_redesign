@@ -3,12 +3,10 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import GenreTag from "@/components/GenreTag";
 import ProductItem from "@/components/ProductItem";
-import { AiFillWindows, AiFillApple } from "react-icons/ai";
 import { FaSteam } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
 import { IoChevronBack } from "react-icons/io5";
 import styles from "@/styles/Product.module.css";
-import Link from "next/link";
 import { BiWindow } from "react-icons/bi";
 import { BsApple } from "react-icons/bs";
 import { useRouter } from "next/router";
@@ -72,7 +70,7 @@ export default function Product() {
 
       <section className={styles["product-header"]}>
         <button alt="Go back to previous page" onClick={() => router.back()}>
-          <IoChevronBack />
+          <IoChevronBack title="go back button icon" />
         </button>
         <span>
           <button>Add to your wishlist</button>
@@ -224,9 +222,9 @@ export default function Product() {
                   <span className={styles["edition-header"]}>
                     <h5 className={styles["edition-tag"]}>Base Game</h5>
                     <h2>Ghost of Tsushima</h2>
-                    <BiWindow />
-                    <BsApple />
-                    <FaSteam />
+                    <BiWindow title="Microsoft Windows icon" />
+                    <BsApple title="Apple Mac icon" />
+                    <FaSteam title="Steam icon" />
                   </span>
                   <div className={styles["edition-purchase-con"]}>
                     <div className={styles["edition-price"]}>
@@ -244,9 +242,9 @@ export default function Product() {
                   <span className={styles["edition-header"]}>
                     <h5 className={styles["edition-tag"]}>Edition</h5>
                     <h2>Ghost of Tsushima DIRECTOR’S CUT</h2>
-                    <BiWindow />
-                    <BsApple />
-                    <FaSteam />
+                    <BiWindow title="Microsoft Windows icon" />
+                    <BsApple title="Apple Mac icon" />
+                    <FaSteam title="Steam icon" />
                   </span>
                   <div className={styles["edition-purchase-con"]}>
                     <div className={styles["edition-price"]}>

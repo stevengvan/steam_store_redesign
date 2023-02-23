@@ -21,9 +21,12 @@ const Navbar = () => {
     >
       <div className="navbar-menu">
         <div className="navbar-header">
-          <FaSteam />
+          <FaSteam title="Steam logo" />
           <h1>Steam</h1>
-          <AiOutlineClose onClick={() => setToggle(false)} />
+          <AiOutlineClose
+            title="close button"
+            onClick={() => setToggle(false)}
+          />
         </div>
 
         <ul className="navbar-list">
@@ -40,7 +43,7 @@ const Navbar = () => {
                 setToggle(false);
               }}
             >
-              <ImHome />
+              <ImHome title="home icon" />
               <h4>Home</h4>
             </li>
           </Link>
@@ -55,12 +58,13 @@ const Navbar = () => {
                       : "navbar-list-item"
                   }
                 >
-                  <BiCategory />
+                  <BiCategory title="categories icon" />
                   <h4>Categories</h4>
                 </div>
               </Link>
               {dropdown === "categories" ? (
                 <MdKeyboardArrowUp
+                  title="hide categories dropdown"
                   size={25}
                   onClick={
                     router.pathname.includes("categories") && slug
@@ -70,6 +74,7 @@ const Navbar = () => {
                 />
               ) : (
                 <MdKeyboardArrowDown
+                  title="show categories dropdown"
                   size={25}
                   onClick={() => setDropdown("categories")}
                 />
@@ -152,19 +157,21 @@ const Navbar = () => {
                       : "navbar-list-item"
                   }
                 >
-                  <GiDramaMasks />
+                  <GiDramaMasks title="genres icon" />
                   <h4>Genres</h4>
                 </div>
               </Link>
 
               {dropdown === "genres" ? (
                 <MdKeyboardArrowUp
+                  title="hide genres dropdown"
                   size={25}
                   tabIndex={0}
                   onClick={() => setDropdown("")}
                 />
               ) : (
                 <MdKeyboardArrowDown
+                  title="show genres dropdown"
                   onClick={
                     router.pathname.includes("genres") && slug
                       ? () => ""
@@ -248,7 +255,7 @@ const Navbar = () => {
                 setToggle(false);
               }}
             >
-              <BsListTask />
+              <BsListTask title="wishlist icon" />
               <h4>Wishlist</h4>
             </li>
           </Link>
@@ -261,7 +268,11 @@ const Navbar = () => {
       </div>
 
       <button className="navbar-toggle" onClick={() => setToggle(!toggle)}>
-        {toggle ? <MdKeyboardArrowUp /> : <MdKeyboardArrowDown />}
+        {toggle ? (
+          <MdKeyboardArrowUp title="hide navigation bar" />
+        ) : (
+          <MdKeyboardArrowDown title="show navigation bar" />
+        )}
       </button>
     </nav>
   );

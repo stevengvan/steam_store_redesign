@@ -15,7 +15,7 @@ export default function Home() {
           <h3>Special Offers</h3>
           <button>
             See All
-            <MdKeyboardArrowRight />
+            <MdKeyboardArrowRight title="See all icon" />
           </button>
         </div>
         <div className="games-grid">
@@ -30,7 +30,7 @@ export default function Home() {
           <h3>Most Popular</h3>
           <button>
             See All
-            <MdKeyboardArrowRight />
+            <MdKeyboardArrowRight title="See all icon" />
           </button>
         </div>
         <div className="games-grid">
@@ -45,7 +45,7 @@ export default function Home() {
           <h3>Wishlist</h3>
           <button>
             See All
-            <MdKeyboardArrowRight />
+            <MdKeyboardArrowRight title="See all icon" />
           </button>
         </div>
         <div className="games-grid">

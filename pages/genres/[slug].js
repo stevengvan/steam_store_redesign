@@ -111,7 +111,7 @@ const Genres = () => {
           <h3>Special Offers</h3>
           <button>
             See All
-            <MdKeyboardArrowRight />
+            <MdKeyboardArrowRight title="See all icon" />
           </button>
         </div>
         <div className="games-grid">
@@ -130,7 +130,7 @@ const Genres = () => {
           <h3>Most Popular</h3>
           <button>
             See All
-            <MdKeyboardArrowRight />
+            <MdKeyboardArrowRight title="See all icon" />
           </button>
         </div>
         <div className="games-grid">
@@ -149,7 +149,7 @@ const Genres = () => {
           <h3>New Releases</h3>
           <button>
             See All
-            <MdKeyboardArrowRight />
+            <MdKeyboardArrowRight title="See all icon" />
           </button>
         </div>
         <div className="games-grid">
@@ -168,7 +168,7 @@ const Genres = () => {
           <h3>Recommended</h3>
           <button>
             See All
-            <MdKeyboardArrowRight />
+            <MdKeyboardArrowRight title="See all icon" />
           </button>
         </div>
         <div className="games-grid">

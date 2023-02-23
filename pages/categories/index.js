@@ -1,5 +1,4 @@
 import React from "react";
-import { useRouter } from "next/router";
 import Link from "next/link";
 import ProductItem from "@/components/ProductItem";
 import { Carousel } from "react-responsive-carousel";
@@ -106,7 +105,7 @@ const CategoryHome = () => {
           <h3>Special Offers</h3>
           <button>
             See All
-            <MdKeyboardArrowRight />
+            <MdKeyboardArrowRight title="See all icon" />
           </button>
         </div>
         <div className="games-grid">
@@ -125,7 +124,7 @@ const CategoryHome = () => {
           <h3>Most Popular</h3>
           <button>
             See All
-            <MdKeyboardArrowRight />
+            <MdKeyboardArrowRight title="See all icon" />
           </button>
         </div>
         <div className="games-grid">
@@ -144,7 +143,7 @@ const CategoryHome = () => {
           <h3>New Releases</h3>
           <button>
             See All
-            <MdKeyboardArrowRight />
+            <MdKeyboardArrowRight title="See all icon" />
           </button>
         </div>
         <div className="games-grid">
@@ -163,7 +162,7 @@ const CategoryHome = () => {
           <h3>Recommended</h3>
           <button>
             See All
-            <MdKeyboardArrowRight />
+            <MdKeyboardArrowRight title="See all icon" />
           </button>
         </div>
         <div className="games-grid">
