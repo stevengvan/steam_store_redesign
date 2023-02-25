@@ -110,11 +110,7 @@ const CategoryHome = () => {
         </div>
         <div className="games-grid">
           {Array.from({ length: 3 }).map((_, index) => (
-            <div>
-              <ProductItem key={index} />
-              <h3>Dead Space</h3>
-              <p>$59.99</p>
-            </div>
+            <ProductItem key={index} />
           ))}
         </div>
       </section>
@@ -129,11 +125,7 @@ const CategoryHome = () => {
         </div>
         <div className="games-grid">
           {Array.from({ length: 3 }).map((_, index) => (
-            <div>
-              <ProductItem key={index} />
-              <h3>Dead Space</h3>
-              <p>$59.99</p>
-            </div>
+            <ProductItem key={index} />
           ))}
         </div>
       </section>
@@ -148,11 +140,7 @@ const CategoryHome = () => {
         </div>
         <div className="games-grid">
           {Array.from({ length: 3 }).map((_, index) => (
-            <div>
-              <ProductItem key={index} />
-              <h3>Dead Space</h3>
-              <p>$59.99</p>
-            </div>
+            <ProductItem key={index} />
           ))}
         </div>
       </section>
@@ -167,11 +155,7 @@ const CategoryHome = () => {
         </div>
         <div className="games-grid">
           {Array.from({ length: 3 }).map((_, index) => (
-            <div>
-              <ProductItem key={index} />
-              <h3>Dead Space</h3>
-              <p>$59.99</p>
-            </div>
+            <ProductItem key={index} />
           ))}
         </div>
       </section>
