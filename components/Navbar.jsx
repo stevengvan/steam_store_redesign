@@ -24,6 +24,7 @@ const Navbar = () => {
           <FaSteam title="Steam logo" />
           <h1>Steam</h1>
           <AiOutlineClose
+            tabIndex={0}
             title="close button"
             onClick={() => setToggle(false)}
           />
@@ -62,10 +63,12 @@ const Navbar = () => {
                   <h4>Categories</h4>
                 </div>
               </Link>
+
               {dropdown === "categories" ? (
                 <MdKeyboardArrowUp
+                  tabIndex={0}
                   title="hide categories dropdown"
-                  size={25}
+                  className="dropdownIcon"
                   onClick={
                     router.pathname.includes("categories") && slug
                       ? () => ""
@@ -74,8 +77,9 @@ const Navbar = () => {
                 />
               ) : (
                 <MdKeyboardArrowDown
+                  tabIndex={0}
                   title="show categories dropdown"
-                  size={25}
+                  className="dropdownIcon"
                   onClick={() => setDropdown("categories")}
                 />
               )}
@@ -165,13 +169,15 @@ const Navbar = () => {
               {dropdown === "genres" ? (
                 <MdKeyboardArrowUp
                   title="hide genres dropdown"
-                  size={25}
+                  className="dropdownIcon"
                   tabIndex={0}
                   onClick={() => setDropdown("")}
                 />
               ) : (
                 <MdKeyboardArrowDown
+                  tabIndex={0}
                   title="show genres dropdown"
+                  className="dropdownIcon"
                   onClick={
                     router.pathname.includes("genres") && slug
                       ? () => ""
@@ -192,7 +198,7 @@ const Navbar = () => {
                       : "menu-dropdown-item"
                   }
                 >
-                  <li>Role Playing</li>
+                  <li>Roleplaying</li>
                 </Link>
 
                 <Link
@@ -267,11 +273,22 @@ const Navbar = () => {
         </div>
       </div>
 
-      <button className="navbar-toggle" onClick={() => setToggle(!toggle)}>
+      <button
+        tabIndex={0}
+        className="navbar-toggle"
+        onClick={() => setToggle(!toggle)}
+        alt="Navigation bar dropdown toggle"
+      >
         {toggle ? (
-          <MdKeyboardArrowUp title="hide navigation bar" />
+          <MdKeyboardArrowUp
+            className="dropdownIcon"
+            title="hide navigation bar"
+          />
         ) : (
-          <MdKeyboardArrowDown title="show navigation bar" />
+          <MdKeyboardArrowDown
+            className="dropdownIcon"
+            title="show navigation bar"
+          />
         )}
       </button>
     </nav>

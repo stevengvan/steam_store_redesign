@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import ProductItem from "@/components/ProductItem";
@@ -9,6 +9,7 @@ import GenreTag from "@/components/GenreTag";
 const Category = () => {
   const router = useRouter();
   const { slug } = router.query;
+  const [listMenu, setListMenu] = useState("all items");
 
   return (
     <>
@@ -164,6 +165,104 @@ const Category = () => {
             <ProductItem key={index} />
           ))}
         </div>
+      </section>
+
+      <section className="games-list-con">
+        <div className="games-list-menu">
+          <button
+            className={
+              listMenu === "all items" ? "games-list-menu-selected" : ""
+            }
+            onClick={() => setListMenu("all items")}
+          >
+            All Items
+          </button>
+          <button
+            className={
+              listMenu === "new and trending" ? "games-list-menu-selected" : ""
+            }
+            onClick={() => setListMenu("new and trending")}
+          >
+            New & Trending
+          </button>
+          <button
+            className={
+              listMenu === "top sellers" ? "games-list-menu-selected" : ""
+            }
+            onClick={() => setListMenu("top sellers")}
+          >
+            Top Sellers
+          </button>
+          <button
+            className={
+              listMenu === "top rated" ? "games-list-menu-selected" : ""
+            }
+            onClick={() => setListMenu("top rated")}
+          >
+            Top Rated
+          </button>
+          <button
+            className={
+              listMenu === "discounted" ? "games-list-menu-selected" : ""
+            }
+            onClick={() => setListMenu("discounted")}
+          >
+            Discounted
+          </button>
+          <button
+            className={
+              listMenu === "popular upcoming" ? "games-list-menu-selected" : ""
+            }
+            onClick={() => setListMenu("popular upcoming")}
+          >
+            Popular Upcoming
+          </button>
+        </div>
+
+        <Link href="/product/ghost-of-tsushima" className="games-list-item">
+          <img src="/Dead_Cells.jpg" alt="product image of Dead Cells" />
+
+          <div>
+            <h4>Dead Cells</h4>
+            <div className="genres-list">
+              <GenreTag genre="Adventure" size="skinny" />
+              <GenreTag genre="Action" size="skinny" />
+            </div>
+            <h5>Aug 6, 2018</h5>
+            <h5>Overwhelmingly Positive | 36,222 User Reviews</h5>
+          </div>
+          <span>$24.99</span>
+        </Link>
+
+        <Link href="/product/ghost-of-tsushima" className="games-list-item">
+          <img src="/Dead_Cells.jpg" alt="product image of Dead Cells" />
+
+          <div>
+            <h4>Dead Cells</h4>
+            <div className="genres-list">
+              <GenreTag genre="Adventure" size="skinny" />
+              <GenreTag genre="Action" size="skinny" />
+            </div>
+            <h5>Aug 6, 2018</h5>
+            <h5>Overwhelmingly Positive | 36,222 User Reviews</h5>
+          </div>
+          <span>$24.99</span>
+        </Link>
+
+        <Link href="/product/ghost-of-tsushima" className="games-list-item">
+          <img src="/Dead_Cells.jpg" alt="product image of Dead Cells" />
+
+          <div>
+            <h4>Dead Cells</h4>
+            <div className="genres-list">
+              <GenreTag genre="Adventure" size="skinny" />
+              <GenreTag genre="Action" size="skinny" />
+            </div>
+            <h5>Aug 6, 2018</h5>
+            <h5>Overwhelmingly Positive | 36,222 User Reviews</h5>
+          </div>
+          <span>$24.99</span>
+        </Link>
       </section>
     </>
   );
