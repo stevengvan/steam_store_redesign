@@ -8,6 +8,11 @@ import WishlistSort from "@/components/WishlistSort";
 
 const Wishlist = () => {
   const [dropdown, setDropdown] = useState("");
+  const [options, setOptions] = useState({
+    view: "expanded",
+    platform: "any",
+    type: "all",
+  });
   const [sort, setSort] = useState("YOUR RANK");
 
   return (
@@ -58,7 +63,9 @@ const Wishlist = () => {
           </span>
         </div>
 
-        {dropdown === "options" && <WishlistOptions />}
+        {dropdown === "options" && (
+          <WishlistOptions options={options} setOptions={setOptions} />
+        )}
       </div>
 
       {Array.from({ length: 20 }).map((_, index) => (

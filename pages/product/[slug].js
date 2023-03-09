@@ -298,7 +298,7 @@ export default function Product() {
             </div>
           </div>
 
-          <div className="recommended-games">
+          <div className={styles["recommended-games"]}>
             <h1>Games like this</h1>
             <div className={styles["recommended-list"]}>
               {Array.from({ length: 5 }).map((_, index) => (

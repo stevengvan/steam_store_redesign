@@ -443,6 +443,10 @@
     cursor: pointer;
   }
 
+  .recommended-list {
+    height: auto;
+  }
+
   .system-desc-con {
     display: flex;
   }

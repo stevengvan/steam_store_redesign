@@ -52,12 +52,13 @@
 .options-dropdown-con {
   background-color: rgb(75, 75, 75);
   padding: 0.5em;
+  width: 100%;
   height: fit-content;
   position: absolute;
   top: 5.5em;
   z-index: 2;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 2.5em;
 }
 .options-dropdown-con > fieldset {
@@ -115,6 +116,7 @@
 
   .options-dropdown-con {
     top: 2em;
+    grid-template-columns: repeat(4, 1fr);
   }
 
   .sort-dropdown-menu > button:hover {

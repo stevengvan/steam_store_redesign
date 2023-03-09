@@ -1,18 +1,40 @@
 import React from "react";
 import styles from "@/styles/Wishlist.module.css";
 
-const WishlistOptions = () => {
+const WishlistOptions = ({ options, setOptions }) => {
   return (
     <div className={styles["options-dropdown-con"]}>
       <fieldset>
         <legend>VIEW</legend>
         <div>
-          <input type="radio" id="compact" name="view" />
+          <input
+            type="radio"
+            id="compact"
+            name="view"
+            onChange={() =>
+              setOptions((prevState) => ({
+                ...prevState,
+                view: "compact",
+              }))
+            }
+            checked={options.view === "compact"}
+          />
           <label for="compact">Compact</label>
         </div>
 
         <div>
-          <input type="radio" id="expanded" name="view" checked />
+          <input
+            type="radio"
+            id="expanded"
+            name="view"
+            onChange={() =>
+              setOptions((prevState) => ({
+                ...prevState,
+                view: "expanded",
+              }))
+            }
+            checked={options.view === "expanded"}
+          />
           <label for="expanded">Expanded</label>
         </div>
       </fieldset>
@@ -20,17 +42,50 @@ const WishlistOptions = () => {
       <fieldset>
         <legend>PLATFORM</legend>
         <div>
-          <input type="radio" id="any" name="platform" checked />
+          <input
+            type="radio"
+            id="any"
+            name="platform"
+            onChange={() =>
+              setOptions((prevState) => ({
+                ...prevState,
+                platform: "any",
+              }))
+            }
+            checked={options.platform === "any"}
+          />
           <label for="any">Any</label>
         </div>
 
         <div>
-          <input type="radio" id="mac" name="platform" />
+          <input
+            type="radio"
+            id="mac"
+            name="platform"
+            onChange={() =>
+              setOptions((prevState) => ({
+                ...prevState,
+                platform: "mac",
+              }))
+            }
+            checked={options.platform === "mac"}
+          />
           <label for="mac">macOS</label>
         </div>
 
         <div>
-          <input type="radio" id="linux" name="platform" />
+          <input
+            type="radio"
+            id="linux"
+            name="platform"
+            onChange={() =>
+              setOptions((prevState) => ({
+                ...prevState,
+                platform: "linux",
+              }))
+            }
+            checked={options.platform === "linux"}
+          />
           <label for="linux">SteamOS + Linux</label>
         </div>
       </fieldset>
@@ -38,27 +93,82 @@ const WishlistOptions = () => {
       <fieldset>
         <legend>TYPE</legend>
         <div>
-          <input type="radio" id="all" name="type" checked />
+          <input
+            type="radio"
+            id="all"
+            name="type"
+            onChange={() =>
+              setOptions((prevState) => ({
+                ...prevState,
+                type: "all",
+              }))
+            }
+            checked={options.type === "all"}
+          />
           <label for="all">All Types</label>
         </div>
 
         <div>
-          <input type="radio" id="games" name="type" />
+          <input
+            type="radio"
+            id="games"
+            name="type"
+            onChange={() =>
+              setOptions((prevState) => ({
+                ...prevState,
+                type: "games",
+              }))
+            }
+            checked={options.type === "games"}
+          />
           <label for="games">Games</label>
         </div>
 
         <div>
-          <input type="radio" id="software" name="type" />
+          <input
+            type="radio"
+            id="software"
+            name="type"
+            onChange={() =>
+              setOptions((prevState) => ({
+                ...prevState,
+                type: "software",
+              }))
+            }
+            checked={options.type === "software"}
+          />
           <label for="software">Software</label>
         </div>
 
         <div>
-          <input type="radio" id="dlc" name="type" />
+          <input
+            type="radio"
+            id="dlc"
+            name="type"
+            onChange={() =>
+              setOptions((prevState) => ({
+                ...prevState,
+                type: "onChange={ () =>dlc",
+              }))
+            }
+            checked={options.type === "dlc"}
+          />
           <label for="dlc">DLC</label>
         </div>
 
         <div>
-          <input type="radio" id="videos" name="type" />
+          <input
+            type="radio"
+            id="videos"
+            name="type"
+            onChange={() =>
+              setOptions((prevState) => ({
+                ...prevState,
+                type: "videos",
+              }))
+            }
+            checked={options.type === "videos"}
+          />
           <label for="videos">Videos</label>
         </div>
       </fieldset>
