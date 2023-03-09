@@ -12,22 +12,22 @@
   border: none;
   outline: none;
 }
-.product-header > *:first-child {
+.product-header > button {
   background-color: rgb(88, 88, 88);
   border-radius: 50%;
   min-height: 30px;
   min-width: 30px;
   padding: 0.5em;
 }
-.product-header > *:first-child:focus {
+.product-header > button:focus {
   background-color: rgb(32, 32, 32);
 }
-.product-header > *:first-child:hover {
+.product-header > button:hover {
   background-color: rgb(32, 32, 32);
   cursor: pointer;
   transition: 250ms;
 }
-.product-header *:first-child > * {
+.product-header button > * {
   padding: 0;
 }
 .product-header > span > button {
@@ -45,6 +45,7 @@
 }
 .product-header > span > button:not(:last-of-type) {
   margin-right: 0.5em;
+  margin-bottom: 0.5em;
 }
 
 .product-name {
@@ -97,7 +98,7 @@
   flex: 1;
   overflow-x: auto;
   width: 100%;
-  height: calc(10vh + 10vmin);
+  height: 10vh;
 }
 
 .list-image {
@@ -254,6 +255,9 @@
   list-style-type: none;
   margin-bottom: 0.5em;
 }
+.additional-list > *:not(:last-of-type) {
+  border-bottom: 2px solid #464646;
+}
 
 .additional-item {
   color: white;
@@ -267,9 +271,6 @@
   transition: 250ms;
   background-color: #464646;
   cursor: pointer;
-}
-.additional-list > *:not(:last-of-type) {
-  border-bottom: 2px solid #464646;
 }
 
 .additional-purchase-con {
@@ -302,7 +303,7 @@
   transition: 250ms;
 }
 
-.recommended-game {
+.recommended-games {
   border-radius: 0.5em;
   max-height: 100%;
 }
@@ -383,15 +384,15 @@
     display: flex;
   }
 
+  .product-hero-image {
+    width: 75%;
+    object-fit: cover;
+  }
+
   .product-hero-info {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-  }
-
-  .product-hero-image {
-    width: 75%;
-    object-fit: cover;
   }
 
   .game-info {
@@ -408,10 +409,6 @@
 
   .game-products {
     display: flex;
-    justify-content: space-between;
-  }
-  .game-products > div:first-child {
-    flex: 1;
   }
   .game-products > div:first-child {
     flex: 1;

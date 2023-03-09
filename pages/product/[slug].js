@@ -266,7 +266,7 @@ export default function Product() {
               </div>
             </div>
 
-            <div className="additional-section">
+            <div>
               <div className={styles["additional-header"]}>
                 <h2>Additional Content</h2> <button>Browse All</button>
               </div>
