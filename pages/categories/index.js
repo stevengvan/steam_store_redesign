@@ -59,7 +59,6 @@ const CategoryHome = () => {
             <div className="genres-list">
               <GenreTag genre="Role Playing" size="skinny" />
               <GenreTag genre="Action" size="skinny" />
-              <GenreTag genre="Stealth" size="skinny" />
             </div>
 
             <h2>$59.99</h2>
@@ -91,7 +90,6 @@ const CategoryHome = () => {
             <div className="genres-list">
               <GenreTag genre="Role Playing" size="skinny" />
               <GenreTag genre="Action" size="skinny" />
-              <GenreTag genre="Stealth" size="skinny" />
             </div>
 
             <h2>$59.99</h2>
@@ -124,7 +122,6 @@ const CategoryHome = () => {
             <div className="genres-list">
               <GenreTag genre="Role Playing" size="skinny" />
               <GenreTag genre="Action" size="skinny" />
-              <GenreTag genre="Stealth" size="skinny" />
             </div>
 
             <h2>$59.99</h2>

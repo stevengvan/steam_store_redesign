@@ -307,7 +307,6 @@ a:visited {
 .carousel-item {
   background-color: blue;
   display: flex;
-  height: 55vh;
 }
 .carousel-item > div {
   background-image: -webkit-linear-gradient(
